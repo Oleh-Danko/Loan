@@ -15,11 +15,26 @@ export default class Slider {
             this.slideIndex = this.slides.length;
         }
 
+        try {
+            this.hanson.style.opacity = '0';
+            this.hanson.classList.add('animated');
+
+            if (num === 3) {
+                setTimeout(() => {
+                    this.hanson.style.opacity = '1';
+                    this.hanson.classList.add('slideInUp');
+                }, 3000);
+            } else {
+                this.hanson.classList.remove('slideInUp');
+            }
+        } catch(e) {}
+
         this.slides.forEach(slide => {
             slide.style.display = 'none';
         });
 
         this.slides[this.slideIndex - 1].style.display = 'block';
+
     }
 
     plusSlides(num) {
@@ -27,6 +42,10 @@ export default class Slider {
     }
 
     render() {
+        try {
+            this.hanson = document.querySelector('.hanson');
+        } catch(e) {}
+
         this.btns.forEach(btn => {
             btn.addEventListener('click', () => {
                 this.plusSlides(1);
