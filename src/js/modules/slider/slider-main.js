@@ -28,7 +28,7 @@ export default class MainSlider extends Slider {
         } catch(e) {}
 
         this.slides.forEach(slide => {
-            // slide.classList.add('animated', 'slideInDown');
+            slide.classList.add('animated', 'fadeIn');
             slide.style.display = 'none';
         });
 

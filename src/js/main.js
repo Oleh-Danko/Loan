@@ -1,5 +1,6 @@
 import MainSlider from "./modules/slider/slider-main";
 import MiniSlider from "./modules/slider/slider-mini";
+import Difference from "./modules/difference";
 import VideoPlayer from './modules/playVideo';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -35,4 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const player = new VideoPlayer('.showup .play', '.overlay');
     player.init();
+
+    new Difference('.officernew', '.officerold', '.officer__card-item').init();
+
 });
